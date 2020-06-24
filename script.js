@@ -1,10 +1,10 @@
 $(document).ready(function () {
   $("#search-button").on("click", function () {
-    var searchValue = $(this).siblings("#search-value").val();
-    var city = $(this).parent().attr("id");
-    localStorage.setItem(searchValue, city);
-    // console.log(searchValue);
-    // console.log(city);
+    var searchValue = $("#search-value").val();
+    var list = $(".form-group").append($("<ul></ul>")).find("ul");
+    list.append("<li></li>");
+    for (var i = 0; i < searchValue.length; i++) list.text(searchValue);
+    console.log(searchValue);
 
     // clear input box
     $("#search-value").val("");
@@ -32,8 +32,6 @@ $(document).ready(function () {
 
         var main = $("<p>");
         main.text(data.main);
-
-        $(".form-group").append(weather, main);
       },
     });
   }
