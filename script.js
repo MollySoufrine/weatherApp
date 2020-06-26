@@ -26,12 +26,10 @@ $(document).ready(function () {
         var data = data;
         console.log(data);
         var currentWeather = $("<p></p>");
-        for (var i = 0; i < 5; i++) {
-          currentWeather.text(
-            data.currentWeather[i][0].main.temp,
-            data.currentWeather[i][0].weather.description
-          );
-          $(".list-group").append(currentWeather);
+        var i = [];
+        for (i = 0; i < 5; i++) {
+          currentWeather.text(data.list[i].main.temp);
+          $(".list-group").append("<p class = 'cW'>" + currentWeather + "</p>");
         }
       },
     });
