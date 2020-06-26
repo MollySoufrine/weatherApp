@@ -25,11 +25,14 @@ $(document).ready(function () {
       success: function (data) {
         var data = data;
         console.log(data);
-        var currentWeather = $("<p></p>");
         var i = [];
         for (i = 0; i < 5; i++) {
-          currentWeather.text(data.list[i].main.temp);
-          $(".list-group").append("<p class = 'cW'>" + currentWeather + "</p>");
+          var currentWeather = $(".cW").append(
+            "<textarea class = 'update'>" +
+              data.list[i].main.temp +
+              "</textarea>"
+          );
+          var b = $(".update").append("<br />");
         }
       },
     });
