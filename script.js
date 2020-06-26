@@ -11,9 +11,6 @@ $(document).ready(function () {
     //Search Value is the City name
     searchWeather(searchValue);
   });
-  function clearContents() {
-    $(".list-group-item").value = "";
-  }
 
   function searchWeather(searchValue) {
     $.ajax({
@@ -29,11 +26,12 @@ $(document).ready(function () {
         var data = data;
         console.log(data);
         var i = [];
+        var forecast = $(".list-group-horizontal-md");
+        forecast.empty();
         for (i = 0; i < 5; i++) {
-          var currentWeather = $(".list-group-horizontal-md").append(
+          var currentWeather = forecast.append(
             "<li class = 'list-group-item'>" + data.list[i].main.temp + "</li>"
           );
-          clearContents(searchValue);
         }
       },
     });
