@@ -2,7 +2,7 @@ $(document).ready(function () {
   $("#search-button").on("click", function () {
     var searchValue = $("#search-value").val();
     var list = $(".list-group").append(
-      "<li class='list-group-item'>" + searchValue + "</li>"
+      "<li class='list-group-item .active'>" + searchValue + "</li>"
     );
     console.log("this is my city " + searchValue);
 
@@ -11,6 +11,9 @@ $(document).ready(function () {
     //Search Value is the City name
     searchWeather(searchValue);
   });
+  function clearContents() {
+    $(".list-group-item").value = "";
+  }
 
   function searchWeather(searchValue) {
     $.ajax({
@@ -27,12 +30,10 @@ $(document).ready(function () {
         console.log(data);
         var i = [];
         for (i = 0; i < 5; i++) {
-          var currentWeather = $(".cW").append(
-            "<textarea class = 'update'>" +
-              data.list[i].main.temp +
-              "</textarea>"
+          var currentWeather = $(".list-group-horizontal-md").append(
+            "<li class = 'list-group-item'>" + data.list[i].main.temp + "</li>"
           );
-          var b = $(".update").append("<br />");
+          clearContents(searchValue);
         }
       },
     });
