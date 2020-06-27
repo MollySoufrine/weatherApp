@@ -30,7 +30,13 @@ $(document).ready(function () {
         forecast.empty();
         for (i = 0; i < 5; i++) {
           var currentWeather = forecast.append(
-            "<li class = 'list-group-item'>" + data.list[i].main.temp + "</li>"
+            "<li class = 'list-group-item'><div>" +
+              moment().add(i, "day").format("ddd, MMM DD") +
+              "</div><div><p> this is the temp " +
+              data.list[i].main.temp +
+              "</p></div><div><p> this is the humidity " +
+              data.list[i].main.humidity +
+              "</p></div></li>"
           );
         }
       },
