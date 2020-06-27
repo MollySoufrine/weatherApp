@@ -1,5 +1,3 @@
-.cw {
-  flex-basis: auto;
-  align-self: auto;
-  flex-wrap: wrap;
+.list-group-item {
+  background-color: blue;
 }
