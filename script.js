@@ -26,17 +26,22 @@ $(document).ready(function () {
         var data = data;
         console.log(data);
         var i = [];
-        var forecast = $(".list-group-horizontal-md");
+        var tempF = data.list[i].main.temp;
+        console.log(tempF);
+        var humidityF = data.list[i].main.humidity;
+        console.log(humidityF);
+
+        var forecast = $(".justify-content-between");
         forecast.empty();
         for (i = 0; i < 5; i++) {
           var currentWeather = forecast.append(
-            "<li class = 'list-group-item'><div>" +
+            "<div  class='card' class='day' style='width: 8rem;'><div>" +
               moment().add(i, "day").format("ddd, MMM DD") +
-              "</div><div><p> this is the temp " +
-              data.list[i].main.temp +
-              "</p></div><div><p> this is the humidity " +
-              data.list[i].main.humidity +
-              "</p></div></li>"
+              "</div><p class='card-text icon'> this is the temp " +
+              tempF +
+              "</p></div><div><p>class='card-text temp' this is the humidity" +
+              humidityF +
+              "</p></div><div><p class='card-text humidity'></p></div>"
           );
         }
       },

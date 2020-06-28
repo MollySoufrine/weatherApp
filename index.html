@@ -13,6 +13,7 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <link rel="stylesheet" href="style.css" />
 
     <title>Weather Dashboard</title>
   </head>
@@ -34,14 +35,20 @@
           </div>
         </aside>
         <div class="row">
-          <aside class="col-lg-3 bg-light">
-            <ul class="list-group list-group-horizontal"></ul>
-          </aside>
+          <ul class="list-group list-group-horizontal"></ul>
         </div>
       </div>
 
-      <div class="row">
-        <ul id="update" class="list-group list-group-horizontal-md"></ul>
+      <div class="row justify-content-between">
+        <div class="col-md-2">
+          <div class="card" class="day" style="width: 8rem;">
+            <div class="card-body">
+              <p class="card-text icon"></p>
+              <p class="card-text temp"></p>
+              <p class="card-text humidity"></p>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- TODO:Weather data goes here  -->
